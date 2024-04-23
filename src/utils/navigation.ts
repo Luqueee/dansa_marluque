@@ -1,11 +1,22 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/contact" },
+  { name: "Inicio", url: "/" },
+  { name: "Academia", url: "/products" },
+  { name: "Casal de verano", url: "/services" },
+  { name: "Festival de danza", url: "/blog" },
+  { name: "Contacto", url: "/contact" },
 ];
+
+const activities = [
+  { name: "HipHop", url: "/" },
+  { name: "Funky", url: "/" },
+  { name: "Flamenco", url: "/" },
+  { name: "HipHop", url: "/" },
+  { name: "Dancemusic", url: "/" },
+  { name: "Jumping", url: "/" },
+  { name: "Fitness", url: "/" },
+];
+
 // An array of links for footer
 const footerLinks = [
   {
@@ -37,6 +48,7 @@ const socialLinks = {
 
 export default {
   navBarLinks,
+  activities,
   footerLinks,
   socialLinks,
 };

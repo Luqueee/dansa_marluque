@@ -1,0 +1,102 @@
+<div
+    class="hs-dropdown hs-dropdown-example relative mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-y-0">
+    <button
+        id="hs-dropdown-example"
+        type="button"
+        class="hs-dropdown-toggle inline-flex items-center rounded-lg text-base font-medium text-neutral-600 outline-none ring-zinc-500 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base">
+        Actividades
+        <svg
+            class="size-4 text-gray-600 hs-dropdown-open:rotate-180 dark:text-neutral-600"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"></path>
+        </svg>
+    </button>
+
+    <div
+        class="hs-dropdown-menu duration z-10 mt-2 hidden w-56 min-w-60 rounded-lg bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
+        aria-labelledby="hs-dropdown-example">
+        <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            href={`/`}>
+            HipHop
+        </a>
+        <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            href={`/`}>
+            Funky, Jazz y Contemporanio
+        </a>
+        <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            href={`/`}>
+            Flamenco y Sevillanas
+        </a>
+        <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            href={`/`}>
+            Dancemusic
+        </a>
+        <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            href={`/`}>
+            Jumping Fitness
+        </a>
+        <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            href={`/`}>
+            Fitness
+        </a>
+    </div>
+</div>
+
+<!--Import the necessary Dropdown plugin-->
+<!--https://preline.co/plugins/html/dropdown.html-->
+<script is:inline src="/scripts/vendor/preline/dropdown/index.js"></script>
+<script>
+    type TLanguage = 'en' | 'fr';
+    const languages: Record<TLanguage, string> = {
+        en: 'English',
+        fr: 'French',
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownButtons = document.querySelectorAll('.hs-dropdown-menu');
+
+        dropdownButtons.forEach((dropdown) => {
+            const languageLinks = dropdown.querySelectorAll('a');
+
+            languageLinks.forEach((link) => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    const lang = link
+                        .getAttribute('href')
+                        ?.replace('/', '') as TLanguage;
+                    const url = new URL(window.location.href);
+                    const pathParts = url.pathname
+                        .split('/')
+                        .filter(
+                            (part) =>
+                                part && !Object.keys(languages).includes(part)
+                        );
+
+                    if (lang === url.pathname.split('/')[1]) return;
+
+                    if (lang !== 'en') {
+                        pathParts.unshift(lang);
+                    }
+
+                    url.pathname = pathParts.join('/');
+                    window.location.href = url.toString();
+                });
+            });
+        });
+    });
+</script>
