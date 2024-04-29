@@ -1,5 +1,5 @@
-
-
+> [!IMPORTANT]
+> This webpage is currently in development.
 
 <h1 align='center'> Dansa Mar Luque Official Repository</h1>
 
@@ -9,7 +9,9 @@ Welcome to the official repository of Dansa Mar Luque, there you can see the fon
 
 **[View Live Demo](https://dansa-marluque.vercel.app/)**
 
-## Table of Contents
+<details open='True'>
+ <summary>Table of Contents</summary>
+ 
   * [Recognitions](#recognitions)
   * [Getting Started](#getting-started)
     + [Installation](#installation)
@@ -33,6 +35,7 @@ Welcome to the official repository of Dansa Mar Luque, there you can see the fon
     + [HTML Minification](#html-minification)
   * [Contributing](#contributing)
   * [License](#license)
+</details>
 
 ## Recognitions
 We used the official **[Screwfast theme](https://github.com/mearashadowfax/ScrewFast)** for the base structure of the page. However we made the respective recognitions in the footer.
