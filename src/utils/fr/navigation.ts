@@ -1,42 +1,54 @@
-
+// An array of links for navigation bar
 const navBarLinks = [
-  { name: "Accueil", url: "/fr" },
-  { name: "Produits", url: "/fr/products" },
-  { name: "Services", url: "/fr/services" },
-  { name: "Blog", url: "/fr/blog" },
-  { name: "Contact", url: "/fr/contact" },
+  { name: "Inicio", url: "/" },
+  { name: "Academia", url: "/products" },
+  { name: "Casal de verano", url: "/services" },
+  { name: "Festival de danza", url: "/blog" },
+  { name: "Contacto", url: "/contact" },
 ];
 
+const activities = [
+  { name: "HipHop", url: "/" },
+  { name: "Funky", url: "/" },
+  { name: "Flamenco", url: "/" },
+  { name: "HipHop", url: "/" },
+  { name: "Dancemusic", url: "/" },
+  { name: "Jumping", url: "/" },
+  { name: "Fitness", url: "/" },
+];
+
+// An array of links for footer
 const footerLinks = [
   {
-    section: "Écosystème",
+    section: "Ecosystem",
     links: [
-      { name: "Documentation", url: "/fr/welcome-to-docs/" },
-      { name: "Outils et Équipements", url: "/fr/products" },
-      { name: "Services de Construction", url: "/fr/services" },
+      { name: "Documentation", url: "/welcome-to-docs/" },
+      { name: "Tools & Equipment", url: "/products" },
+      { name: "Construction Services", url: "/services" },
     ],
   },
   {
-    section: "Société",
+    section: "Company",
     links: [
-      { name: "À propos de nous", url: "#" },
-      { name: "Blog", url: "/fr/blog" },
-      { name: "Carrières", url: "#" },
-      { name: "Clients", url: "#" },
+      { name: "About us", url: "#" },
+      { name: "Blog", url: "/blog" },
+      { name: "Careers", url: "#" },
+      { name: "Customers", url: "#" },
     ],
   },
 ];
-
+// An object of links for social icons
 const socialLinks = {
-  facebook: "#",
-  x: "#",
+  facebook: "https://www.facebook.com/",
+  x: "https://twitter.com/",
   github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "#",
-  slack: "#",
+  google: "https://www.google.com/",
+  slack: "https://slack.com/",
 };
 
 export default {
   navBarLinks,
+  activities,
   footerLinks,
   socialLinks,
 };
