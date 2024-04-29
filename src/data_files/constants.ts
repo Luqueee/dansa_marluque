@@ -1,12 +1,14 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "ScrewFast",
-  tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  title: "Dansa Mar Luque",
+  tagline: "Escuela de danza",
+  description:
+    "Bienvenido a estudio de danza Mar Luque en Sabadell. Ofrecemos una amplia variedad de clases para estudiantes de todas las edades y niveles.",
+  description_short:
+    "Ofrecemos una amplia variedad de clases para estudiantes de todas las edades y niveles.",
+  url: "https://dansamarluque.com",
+  author: "Adria Cabrera Luque",
 };
 
 export const SEO = {
@@ -15,7 +17,7 @@ export const SEO = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    inLanguage: "en-US",
+    inLanguage: "es",
     "@id": SITE.url,
     url: SITE.url,
     name: SITE.title,
@@ -30,10 +32,11 @@ export const SEO = {
 };
 
 export const OG = {
-  locale: "en_US",
+  locale: "es",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  title: `${SITE.title}: : Para todas las edades y niveles`,
+  description:
+    "Bienvenido a estudio de danza Mar Luque en Sabadell. Ofrecemos una amplia variedad de clases para estudiantes de todas las edades y niveles.",
   image: ogImageSrc,
 };
