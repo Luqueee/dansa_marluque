@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    src: any;
+    alt?: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<div class="h-full">
+    {
+        src && alt && (
+            <Image
+                src={src}
+                alt={alt}
+                style="filter: drop-shadow(0 0 10px rgba(255, 255, 255, .2)); mask-image: linear-gradient(to bottom, black 50%, transparent 95%);"
+                class=" h-full w-full scale-75 object-contain "
+                draggable={'false'}
+                loading={'eager'}
+                format={'png'}
+            />
+        )
+    }
+</div>

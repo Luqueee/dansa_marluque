@@ -1,9 +1,9 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: "Inicio", url: "/" },
-  { name: "Academia", url: "/products" },
-  { name: "Casal de verano", url: "/services" },
-  { name: "Festival de danza", url: "/blog" },
+  { name: "Instalaciones", url: "/instalaciones" },
+  { name: "Casal", url: "/services" },
+  { name: "Festival", url: "/blog" },
   { name: "Contacto", url: "/contact" },
 ];
 

@@ -37,7 +37,7 @@ const homeUrl = Astro.currentLocale === 'fr' ? '/fr' : '/';
             <div class="ml-auto mr-5 md:hidden">
                 <button
                     type="button"
-                    class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-none"
+                    class="hs-collapse-toggle flex h-4 w-4 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:outline-none"
                     data-hs-collapse="#navbar-collapse-with-animation"
                     aria-controls="navbar-collapse-with-animation"
                     aria-label="Toggle navigation">
@@ -81,16 +81,15 @@ const homeUrl = Astro.currentLocale === 'fr' ? '/fr' : '/';
             class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block">
             <!-- Navigation links container -->
             <div
-                class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:gap-y-0 md:ps-7 lg:gap-x-7">
+                class="mt-5 flex flex-col gap-x-0 gap-y-4 py-3 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:gap-y-0 md:ps-7 lg:gap-x-7">
                 <!-- Navigation links and Authentication component -->
-
                 {
                     strings.navBarLinks.map((link) => (
                         <NavLink url={link.url} name={link.name} />
                     ))
                 }
                 <Activities />
-                <Authentication />
+                <!-- <Authentication /> -->
                 <LanguagePicker />
 
                 <!-- ThemeIcon component specifically for larger screens -->

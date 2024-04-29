@@ -4,6 +4,7 @@ import Meta from '@components/Meta.astro';
 import Navbar from '@components/sections/Navbar.astro';
 import FooterSection from '@components/sections/FooterSection.astro';
 import { SITE } from '@data/constants';
+import '@fontsource/dela-gothic-one';
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = 'en' } = Astro.props;
@@ -51,20 +52,6 @@ We set the language of the page to English and add classes for scrollbar and scr
 
             requestAnimationFrame(raf);
         </script>
-    </head>
-    <body
-        class="bg-neutral-200 selection:bg-yellow-400 selection:text-neutral-700 dark:bg-neutral-800">
-        <!--
-    Setting up the main structure of the page.
-    The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
-    -->
-        <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-            <Navbar />
-            <main>
-                <slot />
-            </main>
-        </div>
-        <FooterSection />
         <style>
             /* CSS rules for the page scrollbar and scrolling experience with lenis library */
             .scrollbar-hide::-webkit-scrollbar {
@@ -96,6 +83,27 @@ We set the language of the page to English and add classes for scrollbar and scr
             .lenis.lenis-scrolling iframe {
                 pointer-events: none;
             }
+
+            .Dela {
+                font-family: 'Dela Gothic One', system-ui;
+                font-weight: bold;
+                font-style: normal;
+                font-display: swap;
+            }
         </style>
+    </head>
+    <body
+        class="bg-neutral-200 selection:bg-yellow-400 selection:text-neutral-700 dark:bg-neutral-800">
+        <!--
+    Setting up the main structure of the page.
+    The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
+    -->
+        <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+            <Navbar />
+            <main>
+                <slot />
+            </main>
+        </div>
+        <FooterSection />
     </body>
 </html>

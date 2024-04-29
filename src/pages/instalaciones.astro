@@ -1,0 +1,162 @@
+---
+// Import necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import MainSection from '@components/ui/blocks/MainSection.astro';
+import LeftSection from '@components/ui/blocks/LeftSection.astro';
+import RightSection from '@components/ui/blocks/RightSection.astro';
+import FeaturesStats from '@components/sections/features/FeaturesStats.astro';
+
+// Import necessary images
+import sala1 from '@images/academy/sala1.jpg';
+import sala2 from '@images/academy/sala2.jpg';
+import sala3 from '@images/academy/sala3.jpg';
+import vestuario from '@images/academy/vestuario.jpg';
+
+import { SITE } from '@data/constants';
+
+interface Photos {
+    isRightSection: boolean;
+    title: string;
+    subTitle: string;
+    btnExists?: boolean;
+    btnTitle?: string;
+    btnURL?: string;
+    single?: boolean;
+    img?: any;
+    imgAlt?: string;
+    imgOne?: any;
+    imgOneAlt?: string;
+    imgTwo?: any;
+    imgTwoAlt?: string;
+}
+
+const photos: Photos[] = [
+    {
+        isRightSection: true,
+        title: 'Sala 1',
+        subTitle:
+            'Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.',
+        single: true,
+        imgOne: sala1,
+        imgOneAlt: 'Blueprints and digital tablet with construction plans.',
+    },
+    {
+        isRightSection: false,
+        title: 'Sala 2',
+        subTitle:
+            'Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.',
+        img: sala2,
+        imgAlt: 'Construction site before and after',
+        btnExists: true,
+        btnTitle: 'Learn More',
+        btnURL: '#',
+    },
+    {
+        isRightSection: true,
+        title: 'Sala 3',
+        subTitle:
+            'Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.',
+        single: true,
+        imgOne: sala3,
+        imgOneAlt: 'Construction workers orchestrating a project',
+    },
+    {
+        isRightSection: false,
+        title: 'Vestuario',
+        subTitle:
+            "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
+        img: vestuario,
+        imgAlt: 'Man in orange and black vest wearing white helmet holding yellow and black power tool',
+    },
+];
+
+const pageTitle: string = `Services | ${SITE.title}`;
+---
+
+<MainLayout
+    title={pageTitle}
+    structuredData={{
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': 'https://dansamarluque.com/instalaciones',
+        url: 'https://dansamarluque.com/instalaciones',
+        name: 'Instalaciones | Dansa Mar Luque',
+        description:
+            'Descubre todas nuestras instalaciones de Estudi de Dansa Mar Luque',
+        isPartOf: {
+            '@type': 'WebSite',
+            url: 'https://dansamarluque.com',
+            name: 'Dansa Mar Luque',
+            description:
+                'Bienvenido a estudio de danza Mar Luque en Sabadell. Ofrecemos una amplia variedad de clases para estudiantes de todas las edades y niveles.',
+        },
+        inLanguage: 'es',
+    }}>
+    <!--MainSection is the introductory section of the page, it also contains a CTA button-->
+    <MainSection
+        title="Descubre nuestras instalaciones"
+        subTitle="En Estudi de Dansa Mar Luque disponemos de nombrosas salas donde se llevan a cabo diferentes actividades"
+        btnExists={false}
+        btnTitle="Visita"
+        btnURL="#"
+    />
+    <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
+  They alternate for variety in design.
+  The 'btnExists' property is used to toggle the display of a button in these sections.
+  When btnExists={true}, a button is displayed.
+  This can be used to link to more detailed information or related resources.
+  RightSection can also conditionally render one or two images based on the 'single' property.
+  If 'single' is true, it displays one image, otherwise it displays two.
+  -->
+    {
+        photos.map((photos) => {
+            return photos.isRightSection ? (
+                <RightSection
+                    title={photos.title}
+                    subTitle={photos.subTitle}
+                    single={photos.single}
+                    imgOne={photos.imgOne}
+                    imgOneAlt={photos.imgOneAlt}
+                    imgTwo={photos.imgTwo}
+                    imgTwoAlt={photos.imgTwoAlt}
+                    btnExists={photos.btnExists}
+                    btnTitle={photos.btnTitle}
+                    btnURL={photos.btnURL}
+                />
+            ) : (
+                <LeftSection
+                    title={photos.title}
+                    subTitle={photos.subTitle}
+                    img={photos.img}
+                    imgAlt={photos.imgAlt}
+                    btnExists={photos.btnExists}
+                    btnTitle={photos.btnTitle}
+                    btnURL={photos.btnURL}
+                />
+            );
+        })
+    }
+
+    <!--FeaturesStats section showcases essential stats valuable to users-->
+    <FeaturesStats
+        title="By the Numbers"
+        subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+        mainStatTitle="96%"
+        mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
+        stats={[
+            {
+                stat: '99.8%',
+                description: 'project completion rate',
+            },
+            {
+                stat: '5,000+',
+                description: 'successful installations',
+            },
+            {
+                stat: '85%',
+                description: 'client growth year-over-year',
+            },
+        ]}
+    />
+</MainLayout>
+<style></style>
