@@ -12,6 +12,7 @@ import FAQ from '@components/sections/FAQ.astro';
 import Teacher from '@components/sections/teachers/Teacher.astro';
 import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
 import topimage from '@images/index_page/topfoto.png';
+import XaviImage from '@images/index_page/xavi.png';
 import faqs from '@data/faqs.json';
 import features from '@data/features.json';
 import pricing from '@data/pricing.json';
@@ -51,8 +52,8 @@ const avatarSrcs: Array<string> = [
         alt="Stack of ScrewFast product boxes containing assorted hardware tools"
     />
     <section class="flex min-w-full flex-wrap justify-center gap-5">
-        <Teacher name="Xavi Conforme" img="/src/images/index_page/xavi.png" />
-        <Teacher name="Mar Luque" img="/src/images/index_page/topfoto.png" />
+        <Teacher name="Xavi Conforme" img={XaviImage} alt="Xavi Conforme" />
+        <Teacher name="Mar Luque" img={topimage} alt="Mar Luque" />
     </section>
 
     <!-- <Liteyoutube videoId="TtRtkTzHVBU" />  -->
