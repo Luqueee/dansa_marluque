@@ -13,10 +13,10 @@ export default defineConfig({
     domains: ["images.unsplash.com"],
   },
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "fr"],
+    defaultLocale: "es",
+    locales: ["es", "en"],
     fallback: {
-      fr: "en",
+      en: "es",
     },
     routing: {
       prefixDefaultLocale: false,
@@ -30,12 +30,12 @@ export default defineConfig({
         defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
-          fr: "fr",
+          es: "es",
         },
       },
     }),
     starlight({
-      title: "ScrewFast Docs",
+      title: "Dansa Mar Luque Docs",
       defaultLocale: "root",
       locales: {
         root: {

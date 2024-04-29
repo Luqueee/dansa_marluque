@@ -1,0 +1,21 @@
+---
+interface Props {
+    name: string;
+    img: string;
+}
+
+const { name, img } = Astro.props;
+---
+
+<div class="h-full flex-1">
+    <img
+        src={img}
+        alt=""
+        style="filter: drop-shadow(0 0 10px rgba(255, 255, 255, .2)); mask-image: linear-gradient(to bottom, black 50%, transparent 95%);"
+        class="aspect-[4/3] h-full w-full scale-100 object-contain"
+    />
+    <h3
+        class="block text-balance text-center text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-2xl lg:text-2xl lg:leading-tight">
+        {name}
+    </h3>
+</div>

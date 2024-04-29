@@ -9,6 +9,7 @@ import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
 import TestimonialsSection from '@components/sections/testimonials/TestimonialsSection.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
 import FAQ from '@components/sections/FAQ.astro';
+import Teacher from '@components/sections/teachers/Teacher.astro';
 import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
 import topimage from '@images/index_page/topfoto.png';
 import faqs from '@data/faqs.json';
@@ -29,19 +30,19 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-    <AnnouncementBanner
+    <!-- <AnnouncementBanner
         btnId="dismiss-button"
         btnTitle="Explore ScrewFast on GitHub"
         url="https://github.com/mearashadowfax/ScrewFast"
-    />
+    /> -->
 
     <HeroSection
         title=`Estudi de dansa <span
         class="text-yellow-500 dark:text-yellow-400">Mar Luque</span>`
-        subTitle="Mou el teu cos, allibera la teva ment"
-        primaryBtn="Start Exploring"
+        subTitle="Mueve tu cuerpo, alibera tu mente"
+        primaryBtn="Probar una clase"
         primaryBtnURL="/products"
-        secondaryBtn="Contact Sales Team"
+        secondaryBtn="Explora"
         secondaryBtnURL="/contact"
         withReview={true}
         rating=`<span class="font-bold">4.8</span> / 5`
@@ -49,8 +50,12 @@ const avatarSrcs: Array<string> = [
         src={topimage}
         alt="Stack of ScrewFast product boxes containing assorted hardware tools"
     />
+    <section class="flex min-w-full flex-wrap justify-center gap-5">
+        <Teacher name="Xavi Conforme" img="/src/images/index_page/xavi.png" />
+        <Teacher name="Mar Luque" img="/src/images/index_page/topfoto.png" />
+    </section>
 
-    <Liteyoutube videoId="TtRtkTzHVBU" />
+    <!-- <Liteyoutube videoId="TtRtkTzHVBU" />  -->
     <ClientsSection
         title="Trusted by Industry Leaders"
         subTitle="Experience the reliability chosen by industry giants."
