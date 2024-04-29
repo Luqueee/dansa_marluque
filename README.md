@@ -10,7 +10,7 @@ Welcome to the official repository of Dansa Mar Luque, there you can see the fon
 **[View Live Demo](https://dansa-marluque.vercel.app/)**
 
 <details open='True'>
- <summary>Table of Contents</summary>
+ <summary> <h2>Table of Contents</h2></summary>
  
   * [Recognitions](#recognitions)
   * [Getting Started](#getting-started)
