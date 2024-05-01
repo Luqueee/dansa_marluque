@@ -13,7 +13,7 @@ export async function onRequest(Values: any, next: any) {
     if (!accessToken || !refreshToken) {
       console.log("sesion no iniciada");
 
-      return Values.redirect("/");
+      return Values.redirect("/auth/signin");
     }
     console.log("sesion iniciada");
   }
