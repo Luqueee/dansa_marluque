@@ -40,6 +40,22 @@ interface Props {
 }
 ---
 
+<style>
+    @media only screen and (min-width: 600px) and (max-width: 991px) {
+        .background {
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .background {
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+            mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+        }
+    }
+</style>
+
 <!-- Defining a grid container that holds all the content -->
 <section
     class="mx-auto grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full">
@@ -94,13 +110,10 @@ interface Props {
                     <Image
                         src={src}
                         alt={alt}
-                        class="aspect-[4/3] h-full w-full scale-100 object-contain"
+                        class="background sm: aspect-[4/3] h-full w-full scale-100 object-contain"
                         draggable={'false'}
                         loading={'eager'}
                         format={'png'}
-                        style={
-                            '			filter: drop-shadow(0 0 10px rgba(255, 255, 255, .2)); mask-image: linear-gradient(to bottom, black 50%, transparent 95%);'
-                        }
                     />
                 )
             }

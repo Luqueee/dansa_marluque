@@ -13,6 +13,7 @@ export const SITE = {
 
 export const SEO = {
   title: SITE.title,
+
   description: SITE.description,
   structuredData: {
     "@context": "https://schema.org",

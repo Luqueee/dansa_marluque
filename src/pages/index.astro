@@ -11,6 +11,9 @@ import PricingSection from '@components/sections/pricing/PricingSection.astro';
 import FAQ from '@components/sections/FAQ.astro';
 import Teacher from '@components/sections/teachers/Teacher.astro';
 import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
+
+import Announcement from '@components/ui/banners/Announcement.astro';
+
 import topimage from '@images/index_page/topfoto.png';
 import XaviImage from '@images/index_page/xavi.png';
 import faqs from '@data/faqs.json';
@@ -53,23 +56,43 @@ import '@fontsource/dela-gothic-one';
         withReview={true}
         rating=`<span class="font-bold">4.8</span> / 5`
         starCount={4}
-        src={topimage}
+        src={FotoGrupo}
         alt="Stack of ScrewFast product boxes containing assorted hardware tools"
     />
+
+    <section class="flex min-w-full justify-center">
+        <hr class="flex w-[80%] rounded-sm sm:block md:hidden lg:hidden" />
+    </section>
+
     <section class="flex min-w-full flex-wrap justify-center gap-5">
         <Teacher name="Xavi Conforme" img={XaviImage} alt="Xavi Conforme" />
         <Teacher name="Mar Luque" img={topimage} alt="Mar Luque" />
     </section>
 
-    <!-- <Liteyoutube videoId="TtRtkTzHVBU" />  
-    <ClientsSection
+    <section class="mt-20">
+        <Announcement
+            src={FotoGrupo}
+            alt="imagen festival"
+            title="Visita ya el festival"
+            subtitle="Haz click en la imagen para acceder"
+            button={false}
+            buttonText="Entra ya"
+            transparency="bg-opacity-20 opacity-100"
+            bgcolor="bg-white"
+            bgpos="front"
+            position="object-top"
+        />
+    </section>
+
+    <!--<Liteyoutube videoId="TtRtkTzHVBU" /> -->
+    <!-- <ClientsSection
         title="Trusted by Industry Leaders"
         subTitle="Experience the reliability chosen by industry giants."
     />-->
 
-    <ImagePhoto src={FotoGrupo} alt="foto de grupo" />
+    <!-- <ImagePhoto src={FotoGrupo} alt="foto de grupo" />-->
 
-    <FeaturesGeneral
+    <!-- <FeaturesGeneral
         title="Meeting Industry Demands"
         subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
         src={featureImage}
@@ -155,7 +178,9 @@ import '@fontsource/dela-gothic-one';
         title="Let's Build Together"
         subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
         url="https://github.com/mearashadowfax/ScrewFast"
-    />
+    />-->
+
+    <div class="mt-96">a</div>
 </MainLayout>
 
 <style is:global></style>
