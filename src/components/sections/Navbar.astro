@@ -3,7 +3,6 @@
 import ThemeIcon from '@components/ThemeIcon.astro';
 import NavLink from '@components/ui/links/NavLink.astro';
 
-import Authentication from './Authentication.astro';
 import enStrings from '@utils/navigation.ts';
 import frStrings from '@/utils/fr/navigation';
 import BrandLogo from '@components/BrandLogo.astro';
@@ -16,6 +15,7 @@ const homeUrl = Astro.currentLocale === 'fr' ? '/fr' : '/';
 ---
 
 <!-- Main header component -->
+<div id="top"></div>
 <header
     class="sticky inset-x-0 top-4 z-10 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start">
     <!-- Navigation container -->
@@ -90,7 +90,7 @@ const homeUrl = Astro.currentLocale === 'fr' ? '/fr' : '/';
                 }
                 <Activities />
                 <!-- <Authentication /> -->
-                <LanguagePicker />
+                <!--<LanguagePicker /> -->
 
                 <!-- ThemeIcon component specifically for larger screens -->
                 <span class="hidden md:inline-block">

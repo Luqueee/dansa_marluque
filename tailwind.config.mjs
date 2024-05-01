@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 import colors from "tailwindcss/colors";
+import flowbite from "flowbite-react/tailwind";
 
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./node_modules/preline/preline.js",
+    flowbite.content(),
   ],
   darkMode: "class",
   theme: {
@@ -46,5 +48,6 @@ export default {
     require("tailwindcss/nesting"),
     require("preline/plugin"),
     require("@tailwindcss/forms"),
+    flowbite.plugin(),
   ],
 };

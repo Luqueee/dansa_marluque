@@ -27,6 +27,7 @@ import Liteyoutube from '@/components/ui/videos/Liteyoutube.astro';
 
 import ImagePhoto from '@/components/ui/ImagePhoto.astro';
 import FotoGrupo from '@images/fotogrupo.png';
+import BlogFoto from '@images/index_page/blogfoto.png';
 
 const avatarSrcs: Array<string> = [
     'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
@@ -34,8 +35,6 @@ const avatarSrcs: Array<string> = [
     'https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80',
     'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
 ];
-
-import '@fontsource/dela-gothic-one';
 ---
 
 <MainLayout>
@@ -65,22 +64,22 @@ import '@fontsource/dela-gothic-one';
     </section>
 
     <section class="flex min-w-full flex-wrap justify-center gap-5">
-        <Teacher name="Xavi Conforme" img={XaviImage} alt="Xavi Conforme" />
         <Teacher name="Mar Luque" img={topimage} alt="Mar Luque" />
+        <Teacher name="Xavi Conforme" img={XaviImage} alt="Xavi Conforme" />
     </section>
 
     <section class="mt-20">
         <Announcement
-            src={FotoGrupo}
+            src={BlogFoto}
             alt="imagen festival"
-            title="Visita ya el festival"
+            title="Descubre mas sobre nosotros"
             subtitle="Haz click en la imagen para acceder"
             button={false}
             buttonText="Entra ya"
             transparency="bg-opacity-20 opacity-100"
             bgcolor="bg-white"
             bgpos="front"
-            position="object-top"
+            position="object-position: 0px 20%;"
         />
     </section>
 
@@ -180,7 +179,7 @@ import '@fontsource/dela-gothic-one';
         url="https://github.com/mearashadowfax/ScrewFast"
     />-->
 
-    <div class="mt-96">a</div>
+    <div class="mt-96"></div>
 </MainLayout>
 
 <style is:global></style>

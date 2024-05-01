@@ -3,7 +3,7 @@ const navBarLinks = [
   { name: "Inicio", url: "/" },
   { name: "Instalaciones", url: "/instalaciones" },
   { name: "Casal", url: "/services" },
-  { name: "Festival", url: "/blog" },
+  { name: "Blog", url: "/blog" },
   { name: "Contacto", url: "/contact" },
 ];
 
@@ -22,18 +22,9 @@ const footerLinks = [
   {
     section: "Ecosystem",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
-    ],
-  },
-  {
-    section: "Company",
-    links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      //    { name: "Documentation", url: "/welcome-to-docs/" },
+      //    { name: "Tools & Equipment", url: "/products" },
+      //    { name: "Construction Services", url: "/services" },
     ],
   },
 ];

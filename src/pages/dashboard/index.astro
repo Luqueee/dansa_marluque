@@ -1,0 +1,40 @@
+---
+// Import necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import DashboardLayout from '@/layouts/DashboardLayout.astro';
+
+import MainSection from '@components/ui/blocks/MainSection.astro';
+import { SITE } from '@data/constants';
+
+const pageTitle: string = `Dashboard | ${SITE.title}`;
+---
+
+<DashboardLayout
+    title={pageTitle}
+    structuredData={{
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': 'https://dansamarluque.com/instalaciones',
+        url: 'https://dansamarluque.com/instalaciones',
+        name: 'Instalaciones | Dansa Mar Luque',
+        description:
+            'Descubre todas nuestras instalaciones de Estudi de Dansa Mar Luque',
+        isPartOf: {
+            '@type': 'WebSite',
+            url: 'https://dansamarluque.com',
+            name: 'Dansa Mar Luque',
+            description:
+                'Bienvenido a estudio de danza Mar Luque en Sabadell. Ofrecemos una amplia variedad de clases para estudiantes de todas las edades y niveles.',
+        },
+        inLanguage: 'es',
+    }}>
+    <!--MainSection is the introductory section of the page, it also contains a CTA button-->
+    <MainSection
+        title="Panel de control"
+        subTitle="aaaaaa"
+        btnExists={false}
+        btnTitle="Visita"
+        btnURL="#"
+    />
+</DashboardLayout>
+<style></style>
