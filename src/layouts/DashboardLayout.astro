@@ -19,13 +19,8 @@ const {} = Astro.locals;
 
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
     <head>
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
-            rel="stylesheet"
-        />
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
-        ></script>
+        <link href="/scripts/flowbite/flowbite.min.css" rel="stylesheet" />
+        <script src="/scripts/flowbite/flowbite.min.js" is:inline></script>
         <!-- Adding metadata to the HTML document -->
         <Meta meta={meta} structuredData={structuredData} />
         <!-- Define the title of the page -->
@@ -95,7 +90,7 @@ const {} = Astro.locals;
         </style>
     </head>
     <body
-        class="bg-neutral-200 selection:text-neutral-700 dark:bg-neutral-800 selection:bg-yellow-400">
+        class="bg-neutral-200 selection:bg-yellow-400 selection:text-neutral-700 dark:bg-neutral-800">
         <button
             data-drawer-target="sidebar-multi-level-sidebar"
             data-drawer-toggle="sidebar-multi-level-sidebar"

@@ -12,12 +12,22 @@ interface Props {
     buttonText: string;
     transparency: any;
     bgcolor?: string;
-	bgpos?: string;
-	position: string;
-	button: boolean;
+    bgpos?: string;
+    position: string;
+    button: boolean;
 }
 
-const { button, src, alt, title, subtitle, buttonText, transparency, bgcolor, position } = Astro.props;
+const {
+    button,
+    src,
+    alt,
+    title,
+    subtitle,
+    buttonText,
+    transparency,
+    bgcolor,
+    position,
+} = Astro.props;
 ---
 
 <!-- The following anchor tag is the main container for the card.
@@ -30,40 +40,39 @@ const { button, src, alt, title, subtitle, buttonText, transparency, bgcolor, po
     data-astro-prefetch>
     <!-- The container for the blog post's cover image. Uses astro:assets' Image for image source -->
     <div
-        class="relative lg:h-[500px] h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.7]"
+        class="relative h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.7] lg:h-[500px]"
         style="mask-image: linear-gradient(to bottom, black 70%, transparent 95%);">
         {
-        src && alt && (
-        
-        <Image
-            class={`absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110 ${bgcolor} ${transparency}`}
-            src={src}
-            alt={alt}
-            draggable={'false'}
-            loading={'eager'}
-            format={'png'}
-            style={`${position}`}
-        />
-        )}
-       
+            src && alt && (
+                <Image
+                    class={`absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110 ${bgcolor} ${transparency}`}
+                    src={src}
+                    alt={alt}
+                    draggable={'false'}
+                    loading={'eager'}
+                    format={'png'}
+                    style={`${position}`}
+                />
+            )
+        }
     </div>
     <!-- The container for the blog author's avatar and associated metadata (author name and publication date) -->
 
     <!-- The container for the blog post's title and description -->
- 
-    <div class="absolute inset-x-0 inset-y-0 z-10 flex justify-center items-center">
-		
-		<div class="min-h-full flex flex-col justify-center items-center z-30">
-			<div class="p-4 sm:p-6">
-				<h3 class="transition duration-500 group-hover:scale-110 text-balance text-4xl font-bold text-neutral-50 md:text-5xl sm:text-3xl">
-					{title}
-				</h3>
-				<p class="transition duration-500 group-hover:scale-110 mt-2 text-xl text-center text-pretty text-neutral-50/[.8]">
-					{subtitle}
-				</p>
-			</div>
-		</div>
-	</div>
 
-
+    <div
+        class="absolute inset-x-0 inset-y-0 z-10 flex items-center justify-center">
+        <div class="z-30 flex min-h-full flex-col items-center justify-center">
+            <div class="p-4 sm:p-6">
+                <h3
+                    class="text-balance text-4xl font-bold text-neutral-50 transition duration-500 group-hover:scale-110 sm:text-3xl md:text-5xl">
+                    {title}
+                </h3>
+                <p
+                    class="mt-2 text-pretty text-center text-xl text-neutral-50/[.8] transition duration-500 group-hover:scale-110">
+                    {subtitle}
+                </p>
+            </div>
+        </div>
+    </div>
 </a>
