@@ -90,9 +90,14 @@ const appleTouchIcon = await getImage({
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
 />
+
+<link rel="preconnect" href="https://cdn.dansamarluque.com" />
 <meta
     http-equiv="Content-Security-Policy"
-    content="img-src 'self' https://cdn.dansamarluque.com"
+    content="img-src https://cdn.dansamarluque.com; 'strict-dynamic';
+  object-src 'none';
+  base-uri 'none';
+"
 />
 
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
