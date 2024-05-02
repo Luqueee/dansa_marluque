@@ -29,12 +29,11 @@ import ImagePhoto from '@/components/ui/ImagePhoto.astro';
 import FotoGrupo from '@images/fotogrupo.png';
 import BlogFoto from '@images/index_page/blogfoto.png';
 
-const avatarSrcs: Array<string> = [
-    'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-    'https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-    'https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80',
-    'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-];
+const Images = {
+    topfoto: 'https://cdn.dansamarluque.com/topfoto.webp',
+    XaviImage: 'https://cdn.dansamarluque.com/xavi.webp',
+    BlogFoto: 'https://cdn.dansamarluque.com/blogfoto.webp',
+};
 ---
 
 <MainLayout>
@@ -64,21 +63,17 @@ const avatarSrcs: Array<string> = [
     </section>
 
     <section class="flex min-w-full flex-wrap justify-center gap-5">
-        <Teacher
-            name="Mar Luque"
-            img={'https://cdn.dansamarluque.com/topfoto.webp'}
-            alt="Mar Luque"
-        />
+        <Teacher name="Mar Luque" img={Images.topfoto} alt="Mar Luque" />
         <Teacher
             name="Xavi Conforme"
-            img={'https://cdn.dansamarluque.com/xavi.webp'}
+            img={Images.XaviImage}
             alt="Xavi Conforme"
         />
     </section>
 
     <section class="mt-20">
         <Announcement
-            src={'https://cdn.dansamarluque.com/blogfoto.webp'}
+            src={Images.BlogFoto}
             alt="imagen festival"
             title="Descubre mas sobre nosotros"
             subtitle="Haz click en la imagen para acceder"
