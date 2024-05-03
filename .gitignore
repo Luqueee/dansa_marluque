@@ -7,7 +7,7 @@ dist/
 # dependencies
 node_modules/
 
-./src/images
+# ./src/images
 
 # logs
 npm-debug.log*

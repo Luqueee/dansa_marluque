@@ -1,11 +1,11 @@
 import type { APIRoute, ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
-import icon from "@images/icon.png";
-import maskableIcon from "@images/icon.png";
+const icon = "https://cdn.dansamarluque.com/icon.png";
+const maskableIcon = "https://cdn.dansamarluque.com/icon.png";
 
 interface Favicon {
   purpose: "any" | "maskable" | "monochrome";
-  src: ImageMetadata;
+  src: any;
   sizes: number[];
 }
 

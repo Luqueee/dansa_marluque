@@ -1,4 +1,4 @@
-import ogImageSrc from "@images/social.png";
+const ogImageSrc = "https://cdn.dansamarluque.com/blogfoto.webp";
 
 export const SITE = {
   title: "Dansa Mar Luque",
@@ -47,4 +47,8 @@ export const Images = {
   XaviImage: "https://cdn.dansamarluque.com/xavi.webp",
   FotoGrupo: "https://cdn.dansamarluque.com/blogfotoinicio.webp",
   BlogFoto: "https://cdn.dansamarluque.com/fotogrupo.webp",
+  sala1: "https://cdn.dansamarluque.com/sala1.webp",
+  sala2: "https://cdn.dansamarluque.com/sala2.webp",
+  sala3: "https://cdn.dansamarluque.com/sala3.webp",
+  vestuario: "https://cdn.dansamarluque.com/vestuario.webp",
 };

@@ -10,9 +10,12 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
+  site: "https://dansamarluque.com",
   image: {
-    domains: ["images.unsplash.com"],
+    domains: ["cdn.dansamarluque.com", "dansamarluque.com"],
+  },
+  redirects: {
+    "/services": "/",
   },
   i18n: {
     defaultLocale: "en",
@@ -117,11 +120,11 @@ export default defineConfig({
         },
       ],
       social: {
-        github: "https://github.com/mearashadowfax/ScrewFast",
+        github: "https://github.com/Luqueee/dansa_marluque",
       },
       disable404Route: true,
       customCss: ["./src/styles/starlight.css"],
-      favicon: "/logo.ico",
+      favicon: "https://cdn.dansamarluque.com/logo.ico",
       components: {
         SiteTitle: "./src/components/ui/starlight/SiteTitle.astro",
         Head: "./src/components/ui/starlight/Head.astro",
@@ -131,14 +134,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://cdn.dansamarluque.com" + "/icon.png",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://cdn.dansamarluque.com" + "/icon.png",
           },
         },
       ],

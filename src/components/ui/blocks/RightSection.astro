@@ -58,7 +58,8 @@ interface Props {
           class="w-full rounded-lg"
           src={imgOne}
           alt={imgOneAlt}
-          format={"avif"}
+          format={"webp"}
+          inferSize={true}
         />
       </div>
     ) : (
@@ -69,7 +70,8 @@ interface Props {
           src={imgOne}
           alt={imgOneAlt}
           draggable={"false"}
-          format={"avif"}
+          format={"webp"}
+          inferSize={true}
         />
         <!-- Second image in a two-image layout -->
         <Image
@@ -77,7 +79,8 @@ interface Props {
           src={imgTwo}
           alt={imgTwoAlt}
           draggable={"false"}
-          format={"avif"}
+          format={"webp"}
+          inferSize={true}
         />
       </div>
     )
