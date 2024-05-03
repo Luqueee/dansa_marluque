@@ -26,7 +26,9 @@ export default defineConfig({
   },
   prefetch: true,
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     sitemap({
       i18n: {
         defaultLocale: "en",
