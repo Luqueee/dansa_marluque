@@ -45,6 +45,6 @@ export const OG = {
 export const Images = {
   topfoto: "https://cdn.dansamarluque.com/topfoto.webp",
   XaviImage: "https://cdn.dansamarluque.com/xavi.webp",
-  BlogFoto: "https://cdn.dansamarluque.com/blogfoto.webp",
-  FotoGrupo: "https://cdn.dansamarluque.com/fotogrupo.webp",
+  FotoGrupo: "https://cdn.dansamarluque.com/blogfotoinicio.webp",
+  BlogFoto: "https://cdn.dansamarluque.com/fotogrupo.webp",
 };

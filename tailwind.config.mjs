@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 import colors from "tailwindcss/colors";
-import flowbite from "flowbite-react/tailwind";
 
 export default {
   content: [
@@ -10,7 +9,6 @@ export default {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    flowbite.content(),
   ],
   darkMode: "class",
   theme: {
@@ -116,6 +114,5 @@ export default {
     require("preline/plugin"),
     require("@tailwindcss/forms"),
     require("tailwindcss-animate"),
-    flowbite.plugin(),
   ],
 };
