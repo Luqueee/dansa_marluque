@@ -14,9 +14,7 @@ export default defineConfig({
   image: {
     domains: ["cdn.dansamarluque.com", "dansamarluque.com"],
   },
-  redirects: {
-    "/services": "/",
-  },
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "fr"],
