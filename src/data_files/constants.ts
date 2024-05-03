@@ -41,6 +41,7 @@ export const OG = {
     "Bienvenido a estudio de danza Mar Luque en Sabadell. Ofrecemos una amplia variedad de clases para estudiantes de todas las edades y niveles.",
   image: ogImageSrc,
 };
+<<<<<<< HEAD
 
 export const Images = {
   topfoto: "https://cdn.dansamarluque.com/topfoto.webp",
@@ -48,3 +49,5 @@ export const Images = {
   FotoGrupo: "https://cdn.dansamarluque.com/blogfotoinicio.webp",
   BlogFoto: "https://cdn.dansamarluque.com/fotogrupo.webp",
 };
+=======
+>>>>>>> parent of ae4ad23 (fix cdn and responsive)

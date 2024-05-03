@@ -2,31 +2,38 @@
 // Import the necessary components
 import MainLayout from '@/layouts/MainLayout.astro';
 import HeroSection from '@components/sections/landing/HeroSection.astro';
+import HeroSectionAlt from '@components/sections/landing/HeroSectionAlt.astro';
+import ClientsSection from '@components/sections/landing/ClientsSection.astro';
+import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
+import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
+import TestimonialsSection from '@components/sections/testimonials/TestimonialsSection.astro';
+import PricingSection from '@components/sections/pricing/PricingSection.astro';
+import FAQ from '@components/sections/FAQ.astro';
 import Teacher from '@components/sections/teachers/Teacher.astro';
+import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
+
 import Announcement from '@components/ui/banners/Announcement.astro';
+
+import topimage from '@images/index_page/topfoto.png';
+import XaviImage from '@images/index_page/xavi.png';
+import faqs from '@data/faqs.json';
+import features from '@data/features.json';
+import pricing from '@data/pricing.json';
+import featureImage from '@images/features-image.avif';
+import construction from '@images/construction-image.avif';
+import tools from '@images/automated-tools.avif';
+import dashboard from '@images/dashboard-image.avif';
 import Liteyoutube from '@/components/ui/videos/Liteyoutube.astro';
 
-import { Images } from '@/data_files/constants'
+import ImagePhoto from '@/components/ui/ImagePhoto.astro';
+import FotoGrupo from '@images/fotogrupo.png';
+import BlogFoto from '@images/index_page/blogfoto.png';
 
-//import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
-//import faqs from '@data/faqs.json';
-//import features from '@data/features.json';
-//import pricing from '@data/pricing.json';
-//import featureImage from '@images/features-image.avif';
-//import construction from '@images/construction-image.avif';
-//import tools from '@images/automated-tools.avif';
-//import dashboard from '@images/dashboard-image.avif';
-//import HeroSectionAlt from '@components/sections/landing/HeroSectionAlt.astro';
-//import ClientsSection from '@components/sections/landing/ClientsSection.astro';
-//import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
-//import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
-//import TestimonialsSection from '@components/sections/testimonials/TestimonialsSection.astro';
-//import PricingSection from '@components/sections/pricing/PricingSection.astro';
-//import FAQ from '@components/sections/FAQ.astro';
-
-
-//import ImagePhoto from '@/components/ui/ImagePhoto.astro';
-
+const Images = {
+    topfoto: 'https://cdn.dansamarluque.com/topfoto.webp',
+    XaviImage: 'https://cdn.dansamarluque.com/xavi.webp',
+    BlogFoto: 'https://cdn.dansamarluque.com/blogfoto.webp',
+};
 ---
 
 <MainLayout>
@@ -47,13 +54,14 @@ import { Images } from '@/data_files/constants'
         withReview={true}
         rating=`<span class="font-bold">4.8</span> / 5`
         starCount={4}
-        src={Images.FotoGrupo}
+        src={FotoGrupo}
         alt="Stack of ScrewFast product boxes containing assorted hardware tools"
     />
 
-    <section class="flex min-w-full justify-center" >
+    <section class="flex min-w-full justify-center">
         <hr class="flex w-[80%] rounded-sm sm:block md:hidden lg:hidden" />
     </section>
+
     <section class="flex min-w-full flex-wrap justify-center gap-5">
         <Teacher name="Mar Luque" img={Images.topfoto} alt="Mar Luque" />
         <Teacher
@@ -74,7 +82,7 @@ import { Images } from '@/data_files/constants'
             transparency="bg-opacity-20 opacity-100"
             bgcolor="bg-white"
             bgpos="front"
-            position="object-position: 50% 10%;"
+            position="object-position: 0px 20%;"
         />
     </section>
 
