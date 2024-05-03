@@ -7,7 +7,7 @@
 
 Welcome to the official repository of Dansa Mar Luque, there you can see the font source of the page.
 
-**[View Live Demo](https://dansa-marluque.vercel.app/)**
+**[View Live Demo](https://dansamarluque.com/)**
 
 <details open='True'>
  <summary> <h2>Table of Contents</h2></summary>
