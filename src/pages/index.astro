@@ -6,7 +6,7 @@ import Teacher from '@components/sections/teachers/Teacher.astro';
 import Announcement from '@components/ui/banners/Announcement.astro';
 import Announcement2 from '@components/ui/banners/Announcement2.astro';
 import Liteyoutube from '@/components/ui/videos/Liteyoutube.astro';
-
+import '@fontsource/dela-gothic-one';
 import { Images } from '@/data_files/constants';
 
 //import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
@@ -37,7 +37,7 @@ import { Images } from '@/data_files/constants';
 
     <HeroSection
         title=`Estudi de dansa <span
-        class="text-yellow-500 dark:text-yellow-400">Mar Luque</span>`
+        class="font-bold bg-gradient-to-r from-yellow-500 to-yellow-100 via-red-400 text-transparent bg-clip-text leading-normal">Mar Luque</span>`
         subTitle="Mueve tu cuerpo, alibera tu mente"
         primaryBtn="Probar una clase"
         primaryBtnURL="/contact"
@@ -190,4 +190,11 @@ import { Images } from '@/data_files/constants';
     <div class="mt-96"></div>
 </MainLayout>
 
-<style is:global></style>
+<style is:global>
+    html {
+        font-family: 'Dela Gothic One', system-ui;
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+</style>

@@ -55,4 +55,13 @@ export const Images = {
   bannerindexcasal: "https://cdn.dansamarluque.com/bannerindexcasal.webp",
   fotocasalindex: "https://cdn.dansamarluque.com/fotoindexcasal.webp",
   fotojanethcsaal: "https://cdn.dansamarluque.com/fotojanethcasal.webp",
+  fotocasalpagina: "https://cdn.dansamarluque.com/fotocasal.png",
+  gallerycasal: [
+    "https://cdn.dansamarluque.com/fotocasal1.jpg",
+    "https://cdn.dansamarluque.com/fotocasal2.jpg",
+    "https://cdn.dansamarluque.com/fotocasal3.jpg",
+    "https://cdn.dansamarluque.com/fotocasal4.jpg",
+    "https://cdn.dansamarluque.com/fotocasal5.jpg",
+    "https://cdn.dansamarluque.com/fotocasal6.jpg",
+  ],
 };

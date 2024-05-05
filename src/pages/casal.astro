@@ -89,6 +89,70 @@ const articles: Article[] = [
 const pageTitle: string = `Services | ${SITE.title}`;
 ---
 
+<style>
+    .parent {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(100px, 1fr)
+        ); /* Columnas adaptables */
+        grid-template-rows: repeat(
+            auto-fit,
+            minmax(100px, 1fr)
+        ); /* Filas adaptables */
+
+        margin-bottom: 40px;
+    }
+
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6 {
+        border: 2px solid transparent;
+        overflow: hidden;
+    }
+
+    .div1 {
+        border-radius: 20px 0px 0px 0px;
+        grid-area: 1 / 1 / 4 / 4;
+    }
+
+    .div2 {
+        border-radius: 0px 0px 0px 20px;
+        grid-area: 4 / 1 / 6 / 3;
+    }
+
+    .div3 {
+        grid-area: 4 / 3 / 6 / 4;
+    }
+
+    .div4 {
+        grid-area: 1 / 4 / 3 / 6;
+        border-radius: 0px 20px 0px 0px;
+    }
+
+    .div5 {
+        grid-area: 3 / 4 / 6 / 5;
+    }
+
+    .div6 {
+        grid-area: 3 / 5 / 6 / 6;
+        border-radius: 0px 0px 20px 0px;
+    }
+
+    /* Media queries para ajustar el número de columnas y filas en pantallas más pequeñas */
+    @media screen and (max-width: 768px) {
+        .parent {
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+        }
+    }
+</style>
+
 <MainLayout
     title={pageTitle}
     structuredData={{
@@ -111,14 +175,76 @@ const pageTitle: string = `Services | ${SITE.title}`;
     <!--MainSection is the introductory section of the page, it also contains a CTA button-->
 
     <HeroSectionCasal
-        title=`Casal de <span
-        class="text-yellow-500 dark:text-yellow-400">Verano</span>`
-        subTitle="disponemos de un casal de verano con numerosas actividades para todas las edades."
+        title=`Casal de<span
+        class="font-bold bg-gradient-to-r from-yellow-500 to-yellow-100 via-red-400 text-transparent bg-clip-text leading-normal"> Verano</span>`
+        subTitle="Disponemos de un casal de verano con numerosas actividades para todas las edades."
         primaryBtn="Contacta"
         primaryBtnURL="/contact"
-        src={Images.casalfototop}
+        src={Images.fotocasalpagina}
         alt="Publicitary image"
     />
+
+    <div class="parent">
+        <div class="div1">
+            <img
+                src={Images.gallerycasal[2]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 0% 50%;"
+            />
+        </div>
+
+        <div class="div2">
+            <img
+                src={Images.gallerycasal[5]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 40% 10%;"
+            />
+        </div>
+        <div class="div3">
+            <img
+                src={Images.gallerycasal[3]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                draggable={'false'}
+                loading={'eager'}
+            />
+        </div>
+        <div class="div4">
+            <img
+                src={Images.gallerycasal[0]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 0% 60%;"
+            />
+        </div>
+        <div class="div5">
+            <img
+                src={Images.gallerycasal[4]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover object-bottom transition duration-500 hover:scale-105"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 0% 60%;"
+            />
+        </div>
+        <div class="div6">
+            <img
+                src={Images.gallerycasal[1]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                draggable={'false'}
+                loading={'eager'}
+            />
+        </div>
+    </div>
 
     <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
   They alternate for variety in design.
