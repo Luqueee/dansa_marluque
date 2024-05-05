@@ -7,7 +7,7 @@ const activities = [
     { name: 'Flamenco', url: '/actividades/flamenco' },
     { name: 'Dancemusic', url: '/actividades/dancemusic' },
     { name: 'Fitness', url: '/actividades/fitness' },
-    { name: 'Jumping Fitness', url: '/actividades/jumping' },
+    { name: 'Jumping', url: '/actividades/jumping' },
 ];
 ---
 
@@ -39,7 +39,7 @@ const activities = [
         {
             activities.map((value) => (
                 <a
-                    class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                    class="link flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
                     href={value.url}>
                     {value.name}
                 </a>
@@ -58,9 +58,13 @@ const activities = [
         fr: 'French',
     };
 
-    link.addEventListener('click', function (event) {
+    // Mueve la declaración de link aquí para que esté definida antes de su uso
+    const link = document.querySelectorAll('link');
+
+    link.addEventListener('click', function (event: any) {
         event.preventDefault();
 
+        const link = event.currentTarget; // Aquí obtenemos el elemento <button> que disparó el evento
         const lang = link.getAttribute('href')?.replace('/', '') as TLanguage;
         const url = new URL(window.location.href);
 
