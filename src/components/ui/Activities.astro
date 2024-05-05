@@ -1,3 +1,16 @@
+---
+import { map } from 'astro/zod';
+
+const activities = [
+    { name: 'hiphop', url: '/actividades/hiphop' },
+    { name: 'Funky', url: '/actividades/funky' },
+    { name: 'Flamenco', url: '/actividades/flamenco' },
+    { name: 'Dancemusic', url: '/actividades/dancemusic' },
+    { name: 'Fitness', url: '/actividades/fitness' },
+    { name: 'Jumping Fitness', url: '/actividades/jumping' },
+];
+---
+
 <div
     class="hs-dropdown hs-dropdown-example relative flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-y-0">
     <button
@@ -23,36 +36,15 @@
     <div
         class="hs-dropdown-menu duration z-10 mt-2 hidden w-56 min-w-60 rounded-lg bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800"
         aria-labelledby="hs-dropdown-example">
-        <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-            href={`/`}>
-            HipHop
-        </a>
-        <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-            href={`/`}>
-            Funky, Jazz y Contemporanio
-        </a>
-        <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-            href={`/`}>
-            Flamenco y Sevillanas
-        </a>
-        <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-            href={`/`}>
-            Dancemusic
-        </a>
-        <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-            href={`/`}>
-            Jumping Fitness
-        </a>
-        <a
-            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-            href={`/`}>
-            Fitness
-        </a>
+        {
+            activities.map((value) => (
+                <a
+                    class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                    href={value.url}>
+                    {value.name}
+                </a>
+            ))
+        }
     </div>
 </div>
 
@@ -65,6 +57,24 @@
         en: 'English',
         fr: 'French',
     };
+
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const lang = link.getAttribute('href')?.replace('/', '') as TLanguage;
+        const url = new URL(window.location.href);
+
+        if (lang === url.pathname.split('/')[1]) return;
+
+        const pathParts = url.pathname.split('/').filter((part) => part);
+
+        if (lang !== 'en') {
+            pathParts.splice(1, 0, lang);
+        }
+
+        url.pathname = `/${pathParts.join('/')}`;
+        window.location.href = url.toString();
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
         const dropdownButtons = document.querySelectorAll('.hs-dropdown-menu');

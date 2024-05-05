@@ -51,4 +51,8 @@ export const Images = {
   sala2: "https://cdn.dansamarluque.com/sala2.webp",
   sala3: "https://cdn.dansamarluque.com/sala3.webp",
   vestuario: "https://cdn.dansamarluque.com/vestuario.webp",
+  casalfototop: "https://cdn.dansamarluque.com/casalfoto.webp",
+  bannerindexcasal: "https://cdn.dansamarluque.com/bannerindexcasal.webp",
+  fotocasalindex: "https://cdn.dansamarluque.com/fotoindexcasal.webp",
+  fotojanethcsaal: "https://cdn.dansamarluque.com/fotojanethcasal.webp",
 };

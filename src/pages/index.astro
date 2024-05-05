@@ -4,6 +4,7 @@ import MainLayout from '@/layouts/MainLayout.astro';
 import HeroSection from '@components/sections/landing/HeroSection.astro';
 import Teacher from '@components/sections/teachers/Teacher.astro';
 import Announcement from '@components/ui/banners/Announcement.astro';
+import Announcement2 from '@components/ui/banners/Announcement2.astro';
 import Liteyoutube from '@/components/ui/videos/Liteyoutube.astro';
 
 import { Images } from '@/data_files/constants';
@@ -39,9 +40,7 @@ import { Images } from '@/data_files/constants';
         class="text-yellow-500 dark:text-yellow-400">Mar Luque</span>`
         subTitle="Mueve tu cuerpo, alibera tu mente"
         primaryBtn="Probar una clase"
-        primaryBtnURL="/products"
-        secondaryBtn="Explora"
-        secondaryBtnURL="/contact"
+        primaryBtnURL="/contact"
         withReview={true}
         rating=`<span class="font-bold">4.8</span> / 5`
         starCount={4}
@@ -52,6 +51,7 @@ import { Images } from '@/data_files/constants';
     <section class="flex min-w-full justify-center">
         <hr class="flex w-[80%] rounded-sm sm:block md:hidden lg:hidden" />
     </section>
+
     <section class="flex min-w-full flex-wrap justify-center gap-5">
         <Teacher name="Mar Luque" img={Images.topfoto} alt="Mar Luque" />
         <Teacher
@@ -60,7 +60,21 @@ import { Images } from '@/data_files/constants';
             alt="Xavi Conforme"
         />
     </section>
-
+    <section class="mt-20">
+        <Announcement
+            src={Images.fotocasalindex}
+            alt="imagen casal"
+            title="Descubre nuestro casal de verano"
+            subtitle="Haz click en la imagen para acceder"
+            button={false}
+            buttonText="Entra ya"
+            transparency="bg-opacity-20 opacity-100"
+            bgcolor="bg-white"
+            bgpos="front"
+            position="object-position: 40% 50%;"
+            href="/casal"
+        />
+    </section>
     <section class="mt-20">
         <Announcement
             src={Images.BlogFoto}
@@ -73,6 +87,7 @@ import { Images } from '@/data_files/constants';
             bgcolor="bg-white"
             bgpos="front"
             position="object-position: 50% 10%;"
+            href="/"
         />
     </section>
 

@@ -10,7 +10,6 @@ const activities = [
   { name: "HipHop", url: "/" },
   { name: "Funky", url: "/" },
   { name: "Flamenco", url: "/" },
-  { name: "HipHop", url: "/" },
   { name: "Dancemusic", url: "/" },
   { name: "Jumping", url: "/" },
   { name: "Fitness", url: "/" },
@@ -19,7 +18,7 @@ const activities = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: " ",
     links: [
       //    { name: "Documentation", url: "/welcome-to-docs/" },
       //    { name: "Tools & Equipment", url: "/products" },
@@ -32,8 +31,7 @@ const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
   github: "https://github.com/Luqueee/dansa_marluque",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  ig: "https://www.instagram.com/estudi.dansamarluque/",
 };
 
 export default {

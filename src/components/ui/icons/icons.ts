@@ -221,6 +221,20 @@ export const Icons = {
     viewBox: "0 0 16 16",
     fill: "currentColor",
   },
+  ig: {
+    paths: [
+      {
+        d: "M0 0h24v24H0z M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0 M16.5 7.5l0 .01",
+      },
+    ],
+    class:
+      "w-4.5 h-4.5 transition flex-shrink-0 text-neutral-700 duration-300 group-hover:-translate-y-1",
+    width: 16,
+    height: 16,
+    viewBox: "0 0 16 16",
+    fill: "currentColor",
+  },
+
   arrowRightStatic: {
     paths: [
       {
