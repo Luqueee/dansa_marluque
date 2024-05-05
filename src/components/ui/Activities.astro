@@ -1,6 +1,4 @@
 ---
-import { map } from 'astro/zod';
-
 const activities = [
     { name: 'hiphop', url: '/actividades/hiphop' },
     { name: 'Funky', url: '/actividades/funky' },
@@ -59,58 +57,4 @@ const activities = [
     };
 
     // Mueve la declaración de link aquí para que esté definida antes de su uso
-    const link = document.querySelectorAll('link');
-
-    link.addEventListener('click', function (event: any) {
-        event.preventDefault();
-
-        const link = event.currentTarget; // Aquí obtenemos el elemento <button> que disparó el evento
-        const lang = link.getAttribute('href')?.replace('/', '') as TLanguage;
-        const url = new URL(window.location.href);
-
-        if (lang === url.pathname.split('/')[1]) return;
-
-        const pathParts = url.pathname.split('/').filter((part) => part);
-
-        if (lang !== 'en') {
-            pathParts.splice(1, 0, lang);
-        }
-
-        url.pathname = `/${pathParts.join('/')}`;
-        window.location.href = url.toString();
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const dropdownButtons = document.querySelectorAll('.hs-dropdown-menu');
-
-        dropdownButtons.forEach((dropdown) => {
-            const languageLinks = dropdown.querySelectorAll('a');
-
-            languageLinks.forEach((link) => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-
-                    const lang = link
-                        .getAttribute('href')
-                        ?.replace('/', '') as TLanguage;
-                    const url = new URL(window.location.href);
-                    const pathParts = url.pathname
-                        .split('/')
-                        .filter(
-                            (part) =>
-                                part && !Object.keys(languages).includes(part)
-                        );
-
-                    if (lang === url.pathname.split('/')[1]) return;
-
-                    if (lang !== 'en') {
-                        pathParts.unshift(lang);
-                    }
-
-                    url.pathname = pathParts.join('/');
-                    window.location.href = url.toString();
-                });
-            });
-        });
-    });
 </script>
