@@ -7,7 +7,7 @@ import RightSection from '@components/ui/blocks/RightSection.astro';
 import FeaturesStats from '@components/sections/features/FeaturesStats.astro';
 import HeroSectionCasal from '@components/sections/landing/HeroSectionCasal.astro';
 import { Images } from '@/data_files/constants';
-
+import Modal from '@/components/Modal.astro';
 // Import necessary images
 
 import { SITE } from '@data/constants';
@@ -89,70 +89,6 @@ const articles: Article[] = [
 const pageTitle: string = `Services | ${SITE.title}`;
 ---
 
-<style>
-    .parent {
-        height: 100%;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(
-            auto-fit,
-            minmax(100px, 1fr)
-        ); /* Columnas adaptables */
-        grid-template-rows: repeat(
-            auto-fit,
-            minmax(100px, 1fr)
-        ); /* Filas adaptables */
-
-        margin-bottom: 40px;
-    }
-
-    .div1,
-    .div2,
-    .div3,
-    .div4,
-    .div5,
-    .div6 {
-        border: 2px solid transparent;
-        overflow: hidden;
-    }
-
-    .div1 {
-        border-radius: 20px 0px 0px 0px;
-        grid-area: 1 / 1 / 4 / 4;
-    }
-
-    .div2 {
-        border-radius: 0px 0px 0px 20px;
-        grid-area: 4 / 1 / 6 / 3;
-    }
-
-    .div3 {
-        grid-area: 4 / 3 / 6 / 4;
-    }
-
-    .div4 {
-        grid-area: 1 / 4 / 3 / 6;
-        border-radius: 0px 20px 0px 0px;
-    }
-
-    .div5 {
-        grid-area: 3 / 4 / 6 / 5;
-    }
-
-    .div6 {
-        grid-area: 3 / 5 / 6 / 6;
-        border-radius: 0px 0px 20px 0px;
-    }
-
-    /* Media queries para ajustar el número de columnas y filas en pantallas más pequeñas */
-    @media screen and (max-width: 768px) {
-        .parent {
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
-        }
-    }
-</style>
-
 <MainLayout
     title={pageTitle}
     structuredData={{
@@ -173,6 +109,8 @@ const pageTitle: string = `Services | ${SITE.title}`;
         inLanguage: 'es',
     }}>
     <!--MainSection is the introductory section of the page, it also contains a CTA button-->
+    <link href="/scripts/flowbite/flowbite.min.css" rel="stylesheet" />
+    <script src="/scripts/flowbite/flowbite.min.js" is:inline></script>
 
     <HeroSectionCasal
         title=`Casal de<span
@@ -184,64 +122,131 @@ const pageTitle: string = `Services | ${SITE.title}`;
         alt="Publicitary image"
     />
 
-    <div class="parent">
-        <div class="div1">
-            <img
-                src={Images.gallerycasal[2]}
+    <!-- Main modal -->
+
+    <div
+        class="mb-8 grid-flow-row-dense grid-rows-3 sm:block md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
+        <div class="col-span-2 h-72">
+            <Modal
+                img_gallery=`<img
+                src=${Images.gallerycasal[2]}
                 alt="fotocasal"
-                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full rounded-sm object-cover transition duration-500 hover:scale-95"
                 draggable={'false'}
                 loading={'eager'}
                 style="object-position: 0% 50%;"
+            />`
+                img_modal=`<img
+                src=${Images.gallerycasal[2]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full rounded-sm object-cover"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 0% 50%;"
+            />`
+                modal_target="gallerycasal2"
             />
         </div>
 
-        <div class="div2">
-            <img
-                src={Images.gallerycasal[5]}
+        <div class="h-72">
+            <Modal
+                modal_target="gallerycasal5"
+                img_gallery=`<img
+                src=${Images.gallerycasal[5]}
                 alt="fotocasal"
-                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-95"
                 draggable={'false'}
                 loading={'eager'}
                 style="object-position: 40% 10%;"
-            />
-        </div>
-        <div class="div3">
-            <img
-                src={Images.gallerycasal[3]}
+            />`
+                img_modal=`<img
+                src=${Images.gallerycasal[5]}
                 alt="fotocasal"
-                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover"
                 draggable={'false'}
                 loading={'eager'}
+                style="object-position: 40% 10%;"
+            />`
             />
         </div>
-        <div class="div4">
-            <img
-                src={Images.gallerycasal[0]}
+        <div class="h-72">
+            <Modal
+                modal_target="gallerycasal4"
+                img_gallery=`<img
+                src=${Images.gallerycasal[4]}
                 alt="fotocasal"
-                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
-                draggable={'false'}
-                loading={'eager'}
-                style="object-position: 0% 60%;"
-            />
-        </div>
-        <div class="div5">
-            <img
-                src={Images.gallerycasal[4]}
-                alt="fotocasal"
-                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover object-bottom transition duration-500 hover:scale-105"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover object-bottom transition duration-500 hover:scale-95"
                 draggable={'false'}
                 loading={'eager'}
                 style="object-position: 0% 60%;"
-            />
-        </div>
-        <div class="div6">
-            <img
-                src={Images.gallerycasal[1]}
+            />`
+                img_modal=`<img
+                src=${Images.gallerycasal[4]}
                 alt="fotocasal"
-                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover object-bottom"
                 draggable={'false'}
                 loading={'eager'}
+                style="object-position: 0% 60%;"
+            />`
+            />
+        </div>
+        <div class="col-span-2 h-72">
+            <Modal
+                modal_target="gallerycasal0"
+                img_gallery=`<img
+                src=${Images.gallerycasal[0]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-95"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 0% 60%;"
+            />`
+                img_modal=`<img
+                src=${Images.gallerycasal[0]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover"
+                draggable={'false'}
+                loading={'eager'}
+                style="object-position: 0% 60%;"
+            />`
+            />
+        </div>
+        <div class="col-span-2 h-72">
+            <Modal
+                modal_target="gallerycasal3"
+                img_gallery=`<img
+                src=${Images.gallerycasal[3]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-95"
+                draggable={'false'}
+                loading={'eager'}
+            />`
+                img_modal=`<img
+                src=${Images.gallerycasal[3]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover"
+                draggable={'false'}
+                loading={'eager'}
+            />`
+            />
+        </div>
+        <div class="h-72">
+            <Modal
+                modal_target="gallerycasal1"
+                img_gallery=`<img
+                src=${Images.gallerycasal[1]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-95"
+                draggable={'false'}
+                loading={'eager'}
+            />`
+                img_modal=`<img
+                src=${Images.gallerycasal[1]}
+                alt="fotocasal"
+                class="background sm: scale-55 aspect-[4/3] h-full w-full object-cover"
+                draggable={'false'}
+                loading={'eager'}
+            />`
             />
         </div>
     </div>
