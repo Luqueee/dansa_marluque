@@ -41,6 +41,7 @@
     "preline": "^2.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "resend": "^3.2.0",
     "sharp": "^0.33.3",
     "sharp-ico": "^0.1.5",
     "tailwind-merge": "^2.3.0",
