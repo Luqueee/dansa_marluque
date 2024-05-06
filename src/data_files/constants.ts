@@ -1,4 +1,4 @@
-const ogImageSrc = "https://cdn.dansamarluque.com/blogfoto.webp";
+const ogImageSrc = "https://cdn.dansamarluque.com/icon.png";
 
 export const SITE = {
   title: "Dansa Mar Luque",
