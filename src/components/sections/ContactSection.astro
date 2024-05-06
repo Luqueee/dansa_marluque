@@ -8,13 +8,16 @@ import PhoneInput from '@components/ui/forms/input/PhoneInput.astro';
 import TextAreaInput from '@components/ui/forms/input/TextAreaInput.astro';
 import Icon from '@components/ui/icons/Icon.astro';
 
+const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
+const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 // Define the variables that will be used in this component
-const title: string = 'Contact us';
-const subTitle: string =
-    "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const formTitle: string = 'Fill in the form below';
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+const title: string = 'Contacto';
+const subTitle: string = '';
+const formTitle: string = 'Rellena los campos';
+const formSubTitle: string = 'Te responderemos de 1 a 2 dias';
 ---
+
+<script is:inline src="https://www.google.com/recaptcha/api.js"></script>
 
 <!-- Contact Us -->
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -37,17 +40,13 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
                 </h2>
                 <!-- Form for user input with various input fields.-->
                 <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-                <form method="POST" action="/api/email/contact">
+                <form method="POST" id="astro-form" action="/api/email/contact">
                     <div class="grid gap-4">
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                            <TextInput
-                                id="name"
-                                label="First Name"
-                                name="name"
-                            />
+                            <TextInput id="name" label="Nombre" name="name" />
                             <TextInput
                                 id="last"
-                                label="Last Name"
+                                label="Primer apellido"
                                 name="last"
                             />
                         </div>
@@ -55,13 +54,16 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
                         <!-- <PhoneInput id="phone" />-->
                         <TextAreaInput
                             id="textarea"
-                            label="Details"
+                            label="Mensaje"
                             name="textarea"
                         />
                     </div>
 
                     <div class="mt-4 grid">
-                        <AuthBtn title="Send Message" />
+                        <AuthBtn
+                            sitekey={RECAPTCHA_SITE_KEY}
+                            title="Enviar mensaje"
+                        />
                     </div>
 
                     <div class="mt-3 text-center">
