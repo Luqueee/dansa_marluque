@@ -7,6 +7,12 @@ import MainSection from '@components/ui/blocks/MainSection.astro';
 import { SITE } from '@data/constants';
 
 const pageTitle: string = `Dashboard | ${SITE.title}`;
+const baseClasses =
+    'inline-flex w-full md:lg:w-[45%] items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-700 focus-visible:ring outline-none transition duration-300';
+const borderClasses = 'border border-transparent';
+const bgColorClasses = 'bg-yellow-400 dark:focus:outline-none';
+const bgColorWhats = 'bg-[#25cc64] dark:focus:outline-none text-white';
+const hoverWhats = 'hover:bg-[#64e386]';
 ---
 
 <DashboardLayout

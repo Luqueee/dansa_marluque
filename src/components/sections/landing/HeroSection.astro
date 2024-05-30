@@ -38,6 +38,18 @@ interface Props {
     src?: any;
     alt?: string;
 }
+
+const baseClasses =
+    'inline-flex w-40 items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-700 focus-visible:ring outline-none transition duration-300';
+const borderClasses = 'border border-transparent';
+const bgColorClasses = 'bg-yellow-400 dark:focus:outline-none';
+const bgColorWhats = 'bg-[#25cc64] dark:focus:outline-none text-white';
+const hoverWhats = 'hover:bg-[#64e386]';
+
+const hoverClasses = 'hover:bg-yellow-500';
+const fontSizeClasses = '2xl:text-base';
+const disabledClasses = 'disabled:pointer-events-none disabled:opacity-50';
+const ringClasses = 'ring-zinc-500 dark:ring-zinc-200';
 ---
 
 <style>
@@ -86,6 +98,13 @@ interface Props {
                     <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
                 )
             }
+
+            <a
+                href="https://wa.me/34654350567"
+                target="_blank"
+                class={`g-recaptcha ${baseClasses} ${borderClasses} ${bgColorWhats} ${hoverWhats} ${fontSizeClasses} ${disabledClasses} ${ringClasses}`}>
+                Whatsapp
+            </a>
         </div>
 
         <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
