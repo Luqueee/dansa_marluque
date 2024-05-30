@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
 import SecondaryCTA from '@components/ui/buttons/SecondaryCTA.astro';
 import ReviewComponent from '@components/ui/blocks/ReviewComponent.astro';
+import Pin from '@/components/ui/icons/Pin.astro';
 
 // Define props from Astro
 const {
@@ -40,7 +41,7 @@ interface Props {
 }
 
 const baseClasses =
-    'inline-flex w-40 items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-700 focus-visible:ring outline-none transition duration-300';
+    'inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-700 focus-visible:ring outline-none transition duration-300';
 const borderClasses = 'border border-transparent';
 const bgColorClasses = 'bg-yellow-400 dark:focus:outline-none';
 const bgColorWhats = 'bg-[#25cc64] dark:focus:outline-none text-white';
@@ -75,14 +76,19 @@ const ringClasses = 'ring-zinc-500 dark:ring-zinc-200';
     <div>
         <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
         <h1
-            class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight">
+            class="block text-balance text-5xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl lg:text-6xl lg:leading-tight">
             <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
             <Fragment set:html={title} />
         </h1>
         {
             subTitle && (
-                <p class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5">
+                <p class="mt-6 flex text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5">
                     {subTitle}
+                    <span class=" ml-4 flex text-black dark:text-white">
+                        {' '}
+                        <Pin />
+                        Sabadell
+                    </span>
                 </p>
             )
         }
