@@ -131,7 +131,7 @@ devDependencies:
     specifier: ^4.0.7
     version: 4.0.7
   astro-vtbot:
-    specifier: ^1.7.14
+    specifier: ^1.7.24
     version: 1.7.24
   prettier:
     specifier: ^3.2.5
